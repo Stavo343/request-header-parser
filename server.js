@@ -6,8 +6,8 @@ app = express();
 var parsed = {"ipaddress":"_", "language":"_", "software":"_"};
 
 app.get('/', function(req, res) {
-  var ip = JSON.stringify(req.connection.remoteAddress).toString();
-
+  var ip = req.headers['x-forwarded-for'] || JSON.stringify(req.connection.remoteAddress);
+  console.log(req.connection.remoteAddress);
   if (ip.indexOf(':') != -1) {
     parsed.ipaddress = ip.slice(ip.lastIndexOf(':')+1, ip.length-1);
   } else {
