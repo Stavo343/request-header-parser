@@ -1,0 +1,25 @@
+{
+  "name": "reqheaderparser",
+  "version": "1.0.0",
+  "description": "This server obtains and returns the client's browser's ip address, language, and OS.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.15.2",
+    "nodemon": "^1.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stavo343/request-header-parser.git"
+  },
+  "author": "stavo343",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Stavo343/request-header-parser/issues"
+  },
+  "homepage": "https://github.com/Stavo343/request-header-parser#readme"
+}

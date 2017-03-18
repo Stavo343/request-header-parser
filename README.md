@@ -1,0 +1,1 @@
+This server obtains and returns the client's browser's ip address, language, and OS.
