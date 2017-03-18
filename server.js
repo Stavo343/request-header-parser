@@ -9,9 +9,9 @@ app.get('/', function(req, res) {
   var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   console.log(req.connection.remoteAddress);
   if (ip.indexOf(':') != -1) {
-    parsed.ipaddress = ip.slice(ip.lastIndexOf(':')+1, ip.length-1);
+    parsed.ipaddress = ip.slice(ip.lastIndexOf(':')+1, ip.length);
   } else {
-    parsed.ipaddress = ip.slice(0, ip.length);
+    parsed.ipaddress = ip;
   }
 
   var lang = JSON.stringify(req.headers["accept-language"].toString());
