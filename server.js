@@ -6,12 +6,12 @@ app = express();
 var parsed = {"ipaddress":"_", "language":"_", "software":"_"};
 
 app.get('/', function(req, res) {
-  var ip = req.headers['x-forwarded-for'] || JSON.stringify(req.connection.remoteAddress);
+  var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   console.log(req.connection.remoteAddress);
   if (ip.indexOf(':') != -1) {
     parsed.ipaddress = ip.slice(ip.lastIndexOf(':')+1, ip.length-1);
   } else {
-    parsed.ipaddress = ip.slice(1, ip.length-1);
+    parsed.ipaddress = ip.slice(0, ip.length);
   }
 
   var lang = JSON.stringify(req.headers["accept-language"].toString());
